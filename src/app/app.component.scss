@@ -44,6 +44,15 @@ max-width: 500px;
 width: 100%;
 }
 
+mat-list-option[aria-selected="true"] {
+    text-decoration: line-through;
+}
+
+.todo-card {
+    width: 80%;
+    height: 30rem;
+}
+
 .content {
 display: flex;
 margin: 32px auto;

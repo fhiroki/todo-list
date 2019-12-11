@@ -4,7 +4,7 @@
 </div>
 
 <div class="content" role="main">
-  <h2>TODOs</h2>
+  <h2>Today's Todos</h2>
 
   <div class="card-container">
     <div class="card">
@@ -12,11 +12,22 @@
         <mat-form-field>
           <input matInput placeholder="Add Task" type="text" [(ngModel)]="taskName" name="taskName" (keyup.enter)="addTodo()">
           <button mat-button *ngIf="taskName" matSuffix mat-icon-button aria-label="Clear">
-            <mat-icon (click)="clear()">close</mat-icon>
+            <mat-icon (click)="taskName=''">close</mat-icon>
           </button>
         </mat-form-field>
       </form>
     </div>
   </div>
+
+  <mat-card class="todo-card">
+    <div *ngIf="todos.length != 0">
+      <button mat-flat-button (click)="todos=[]">Clear All</button>
+      <mat-selection-list>
+          <mat-list-option checkboxPosition="before" *ngFor="let todo of todos">
+            <div>{{todo}}</div>
+          </mat-list-option>
+      </mat-selection-list>
+    </div>
+  </mat-card>
 
 </div>

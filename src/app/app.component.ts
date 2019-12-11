@@ -8,15 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
     title = 'todo-list';
     taskName = '';
+    todos = [];
 
     addTodo() {
         if (!this.taskName) return;
 
-        console.log(this.taskName);
-        this.clear();
-    }
-
-    clear() {
+        this.todos.push(this.taskName);
         this.taskName = '';
     }
 }
